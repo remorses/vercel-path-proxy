@@ -27,7 +27,6 @@ const FALLBACK_URL = makeUrl(process.env.FALLBACK_URL)
 
 
 export function middleware(req) {
-    // console.log({ pathname, PATH_1, TARGET_URL_1 })
     const { pathname } = req.nextUrl
 
     function samePath(p) {
