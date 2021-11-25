@@ -1,0 +1,14 @@
+{
+    "name": "app",
+    "private": true,
+    "scripts": {
+        "dev": "PATH_1=/docs TARGET_URL_1=google.com FALLBACK_URL=bing.com next dev",
+        "build": "node validate.js && next build",
+        "start": "next start",
+        "lint": "next lint"
+    },
+    "dependencies": {
+        "next": "12.0.4"
+    },
+    "devDependencies": {}
+}
