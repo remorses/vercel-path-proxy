@@ -25,7 +25,6 @@ let [TARGET_URL_1, TARGET_URL_2, TARGET_URL_3] = [
 
 const FALLBACK_URL = makeUrl(process.env.FALLBACK_URL)
 
-
 export function middleware(req) {
     const { pathname } = req.nextUrl
 
@@ -51,9 +50,13 @@ export function middleware(req) {
     console.info(`Neither FALLBACK_URL or PATH_N found`)
 }
 
-function makeUrl(domain) {
-    if (domain && !domain.startsWith('http')) {
-        return `https://${domain}`
+function makeUrl(url) {
+    if (!url) {
+        return ''
     }
-    return domain
+    if (!url.startsWith('http')) {
+        url = `https://${url}`
+    }
+    const u = new URL(url)
+    return u.origin
 }
