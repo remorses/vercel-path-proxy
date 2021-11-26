@@ -58,5 +58,9 @@ function makeUrl(url) {
         url = `https://${url}`
     }
     const u = new URL(url)
-    return u.origin
+    url = u.origin
+    if (url.endsWith('/')) {
+        url = url.slice(0, -1)
+    }
+    return url
 }
